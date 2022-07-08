@@ -1,0 +1,39 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Conda environments: ignored
+Job stats:
+job            count    min threads    max threads
+-----------  -------  -------------  -------------
+all                1              1              1
+runProdigal        1              1              1
+total              2              1              1
+
+Select jobs to execute...
+
+[Thu Jul  7 16:03:47 2022]
+rule runProdigal:
+    input: config/strain_genomes/Akkermansia_muciniphila.fa
+    output: Workflow/out/prodigal/geneCoord/Akkermansia_muciniphila_geneCoord.out, Workflow/out/prodigal/proteinSeq/Akkermansia_muciniphila_prodigal.faa
+    jobid: 1
+    reason: Missing output files: Workflow/out/prodigal/geneCoord/Akkermansia_muciniphila_geneCoord.out, Workflow/out/prodigal/proteinSeq/Akkermansia_muciniphila_prodigal.faa
+    wildcards: strain=Akkermansia_muciniphila
+    resources: tmpdir=/var/folders/hb/bfjf2bbn7x5d0ln1l96pwg5w0000gn/T
+
+[Thu Jul  7 16:04:00 2022]
+Finished job 1.
+1 of 2 steps (50%) done
+Select jobs to execute...
+
+[Thu Jul  7 16:04:00 2022]
+localrule all:
+    input: Workflow/out/prodigal/geneCoord/Akkermansia_muciniphila_geneCoord.out, Workflow/out/prodigal/proteinSeq/Akkermansia_muciniphila_prodigal.faa
+    jobid: 0
+    reason: Input files updated by another job: Workflow/out/prodigal/geneCoord/Akkermansia_muciniphila_geneCoord.out, Workflow/out/prodigal/proteinSeq/Akkermansia_muciniphila_prodigal.faa
+    resources: tmpdir=/var/folders/hb/bfjf2bbn7x5d0ln1l96pwg5w0000gn/T
+
+[Thu Jul  7 16:04:00 2022]
+Finished job 0.
+2 of 2 steps (100%) done
+Complete log: .snakemake/log/2022-07-07T160347.126998.snakemake.log

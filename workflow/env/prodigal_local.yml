@@ -1,0 +1,7 @@
+name: prodigal
+channels:
+  - bioconda
+  - defaults
+dependencies:
+  - prodigal=2.6.3=ha5712d3_4
+prefix: /Users/augustburton/miniconda3/envs/prodigal

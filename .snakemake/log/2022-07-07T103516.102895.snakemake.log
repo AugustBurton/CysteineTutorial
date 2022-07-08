@@ -1,0 +1,3 @@
+SyntaxError in line 9 of /Users/augustburton/PycharmProjects/CysteineTutorial/workflow/rules/runHMMER.smk:
+invalid syntax
+  File "/Users/augustburton/PycharmProjects/CysteineTutorial/Snakefile", line 38, in <module>

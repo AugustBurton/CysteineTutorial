@@ -1,0 +1,7 @@
+Building DAG of jobs...
+MissingInputException in line 52 of /Users/augustburton/PycharmProjects/CysteineTutorial/workflow/rules/runHMMER.smk:
+Missing input files for rule combineMSA:
+    output: workflow/out/summary_all/faa_summary/compiled_cysK_hits.faa
+    wildcards: gene=cysK
+    affected files:
+        workflow/out/cysK/faa_summary/Akkermansia_muciniphila_cysK_hits.faa

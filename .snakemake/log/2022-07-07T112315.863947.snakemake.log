@@ -1,0 +1,7 @@
+Building DAG of jobs...
+MissingInputException in line 23 of /Users/augustburton/PycharmProjects/CysteineTutorial/workflow/rules/makeProfileHMM.smk:
+Missing input files for rule makeMSA:
+    output: config/referenceGeneMSA/cysK_msa.faa
+    wildcards: gene=cysK
+    affected files:
+        config/referenceGeneFiles/cysK.faa

@@ -1,0 +1,5 @@
+Building DAG of jobs...
+MissingInputException in line 25 of /Users/augustburton/PycharmProjects/CysteineTutorial/Snakefile:
+Missing input files for rule all:
+    affected files:
+        Workflow/out/prodigal/geneCoord/Akkermansia_muciniphila_geneCoord.out

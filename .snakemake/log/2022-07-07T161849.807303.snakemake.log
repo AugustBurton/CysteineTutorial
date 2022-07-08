@@ -1,0 +1,54 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Conda environments: ignored
+Job stats:
+job                   count    min threads    max threads
+------------------  -------  -------------  -------------
+all                       1              1              1
+combineCSV                1              1              1
+combineMSA                1              1              1
+convertMSA_toFASTA        1              1              1
+parseHMMER                1              1              1
+runHMMER                  1              1              1
+total                     6              1              1
+
+Select jobs to execute...
+
+[Thu Jul  7 16:18:50 2022]
+rule runHMMER:
+    input: workflow/out/prodigal/proteinSeq/Akkermansia_muciniphila_prodigal.faa
+    output: workflow/out/cysK/hmmer_output/Akkermansia_muciniphila_cysK.hmm.out, workflow/out/cysK/hmmer_output/Akkermansia_muciniphila_cysK.domtblout, workflow/out/cysK/hmmer_output/Akkermansia_muciniphila_cysK.sto
+    jobid: 2
+    reason: Missing output files: workflow/out/cysK/hmmer_output/Akkermansia_muciniphila_cysK.sto, workflow/out/cysK/hmmer_output/Akkermansia_muciniphila_cysK.hmm.out, workflow/out/cysK/hmmer_output/Akkermansia_muciniphila_cysK.domtblout
+    wildcards: gene=cysK, strain=Akkermansia_muciniphila
+    resources: tmpdir=/var/folders/hb/bfjf2bbn7x5d0ln1l96pwg5w0000gn/T
+
+[Thu Jul  7 16:18:50 2022]
+Finished job 2.
+1 of 6 steps (17%) done
+Select jobs to execute...
+
+[Thu Jul  7 16:18:51 2022]
+rule parseHMMER:
+    input: workflow/out/cysK/hmmer_output/Akkermansia_muciniphila_cysK.domtblout
+    output: workflow/out/cysK/csv_summary/Akkermansia_muciniphila_cysK_hits.csv
+    jobid: 3
+    reason: Missing output files: workflow/out/cysK/csv_summary/Akkermansia_muciniphila_cysK_hits.csv; Input files updated by another job: workflow/out/cysK/hmmer_output/Akkermansia_muciniphila_cysK.domtblout
+    wildcards: gene=cysK, strain=Akkermansia_muciniphila
+    resources: tmpdir=/var/folders/hb/bfjf2bbn7x5d0ln1l96pwg5w0000gn/T
+
+[Thu Jul  7 16:18:51 2022]
+Error in rule parseHMMER:
+    jobid: 3
+    output: workflow/out/cysK/csv_summary/Akkermansia_muciniphila_cysK_hits.csv
+    shell:
+        
+        python3 workflow/scripts/parse_hmmer_domtable.py workflow/out/cysK/hmmer_output/Akkermansia_muciniphila_cysK.domtblout workflow/out/cysK/csv_summary/Akkermansia_muciniphila_cysK_hits.csv
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2022-07-07T161849.807303.snakemake.log

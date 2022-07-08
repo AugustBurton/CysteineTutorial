@@ -1,0 +1,13 @@
+Building DAG of jobs...
+MissingInputException in line 25 of /Users/augustburton/PycharmProjects/CysteineTutorial/Snakefile:
+Missing input files for rule all:
+    affected files:
+        workflow/out/summary_all/csv_summary/compiled_cysK_hits.csv
+        workflow/out/prodigal/geneCoord/Akkermansia_muciniphila_geneCoord.out
+        workflow/out/cysK/hmmer_output/Akkermansia_muciniphila_cysK.hmm.out
+        workflow/out/cysK/hmmer_output/Akkermansia_muciniphila_cysK.sto
+        workflow/out/summary_all/faa_summary/compiled_cysK_hits.faa
+        workflow/out/cysK/hmmer_output/Akkermansia_muciniphila_cysK.domtblout
+        workflow/out/cysK/faa_summary/Akkermansia_muciniphila_cysK_hits.faa
+        workflow/out/prodigal/proteinSeq/Akkermansia_muciniphila_prodigal.faa
+        workflow/out/cysK/csv_summary/Akkermansia_muciniphila_cysK_hits.csv

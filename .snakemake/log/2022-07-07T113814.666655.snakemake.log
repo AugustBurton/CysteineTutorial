@@ -1,0 +1,39 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Conda environments: ignored
+Job stats:
+job                count    min threads    max threads
+---------------  -------  -------------  -------------
+all                    1              1              1
+buildProfileHMM        1              1              1
+makeMSA                1              1              1
+total                  3              1              1
+
+Select jobs to execute...
+
+[Thu Jul  7 11:38:14 2022]
+rule makeMSA:
+    input: config/referenceGeneFiles/cysK_K01738.faa
+    output: config/referenceGeneMSA/cysK_K01738_msa.faa
+    jobid: 1
+    reason: Missing output files: config/referenceGeneMSA/cysK_K01738_msa.faa
+    wildcards: gene=cysK_K01738
+    resources: tmpdir=/var/folders/hb/bfjf2bbn7x5d0ln1l96pwg5w0000gn/T
+
+[Thu Jul  7 11:38:15 2022]
+Error in rule makeMSA:
+    jobid: 1
+    output: config/referenceGeneMSA/cysK_K01738_msa.faa
+    shell:
+        
+        /usr/local/bin/mafft config/referenceGeneFiles/cysK_K01738.faa > config/referenceGeneMSA/cysK_K01738_msa.faa
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job makeMSA since they might be corrupted:
+config/referenceGeneMSA/cysK_K01738_msa.faa
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2022-07-07T113814.666655.snakemake.log
